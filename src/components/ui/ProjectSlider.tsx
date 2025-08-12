@@ -30,6 +30,19 @@ interface ProjectSliderProps {
 }
 
 export default function ProjectSlider({ projects }: ProjectSliderProps) {
+  // Consistent icon tile used for every project
+  const IconBadge: React.FC<{
+    Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+    color: string;
+  }> = ({ Icon, color }) => {
+    const gradient = color && color.trim().length > 0 ? color : "from-slate-600 to-slate-800";
+    return (
+      <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${gradient} p-3 md:p-4 shadow-lg overflow-hidden`}
+      >
+        <Icon className="w-full h-full text-white" strokeWidth={2} />
+      </div>
+    );
+  };
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -59,15 +72,18 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
   const paginate = useCallback((newDirection: number) => {
     setDirection(newDirection);
     setCurrentIndex((prevIndex) => {
+      const lastIndex = projects.length - 1;
+      if (lastIndex < 0) return 0;
       if (newDirection === 1) {
-        return prevIndex === projects.length - 1 ? 0 : prevIndex + 1;
-      } else {
-        return prevIndex === 0 ? projects.length - 1 : prevIndex + 1;
+        return prevIndex === lastIndex ? 0 : prevIndex + 1;
       }
+      // newDirection === -1 (backwards)
+      return prevIndex === 0 ? lastIndex : prevIndex - 1;
     });
   }, [projects.length]);
 
   const goToSlide = (index: number) => {
+    if (index < 0 || index >= projects.length) return;
     setDirection(index > currentIndex ? 1 : -1);
     setCurrentIndex(index);
   };
@@ -93,8 +109,19 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
     return () => clearInterval(timer);
   }, [paginate, isPaused]);
 
+  if (!projects || projects.length === 0) {
+    return (
+      <div className="relative w-full max-w-7xl mx-auto p-8 rounded-2xl bg-muted/30 text-center">
+        <p className="text-muted-foreground">No projects to display.</p>
+      </div>
+    );
+  }
+
   const currentProject = projects[currentIndex];
-  const Icon = currentProject.icon;
+  if (!currentProject) {
+    return null;
+  }
+  const Icon = currentProject.icon ?? Code;
 
   return (
     <div 
@@ -135,10 +162,8 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
                 {/* Left Side - Project Info */}
                 <div className="lg:w-1/2 flex flex-col space-y-6">
                   {/* Project Header */}
-                  <div className="flex items-center gap-4">
-                    <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${currentProject.color} p-3 md:p-4 shadow-lg`}>
-                      <Icon className="w-full h-full text-white" />
-                    </div>
+                   <div className="flex items-center gap-4 min-w-0">
+                    <IconBadge Icon={Icon} color={currentProject.color} />
                     <div>
                       <div className="flex flex-wrap items-center gap-2 mb-2">
                         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
@@ -153,10 +178,10 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
                           {currentProject.status}
                         </div>
                       </div>
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
+                      <h3 className="text-2xl md:text-3xl lg:text-[32px] font-bold text-foreground leading-tight break-words">
                         {currentProject.title}
                       </h3>
-                      <p className="text-sm md:text-base text-muted-foreground mt-1">
+                       <p className="text-sm md:text-base text-muted-foreground mt-1 break-words">
                         {currentProject.category}
                       </p>
                     </div>

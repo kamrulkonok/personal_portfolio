@@ -28,7 +28,7 @@ const projectsData = [
   },
   {
     id: "anomaly-detection",
-    title: "Anomaly Detection in Diesel Train Cooling Systems",
+    title: "Anomaly Detection in Train Cooling Systems",
     period: "September 2023 – December 2023",
     category: "Data Mining, ML, Anomaly Detection, Time Series Analysis",
     status: "Completed",
