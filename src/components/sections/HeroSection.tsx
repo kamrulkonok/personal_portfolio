@@ -6,8 +6,8 @@ import { Download, Github, Linkedin, Mail, Brain, Network, Database, Zap, Eye, S
 export default function HeroSection() {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/resume/CV_PhD_Kamrul.pdf";
-    link.download = "Md_Kamrul_Islam_Resume.pdf";
+    link.href = "/resume/CV_Kamrul.pdf";
+    link.download = "Kamrul_CV.pdf";
     link.click();
   };
 
