@@ -342,7 +342,7 @@ export default function ContactSection() {
           <div className="card-modern p-8 bg-gradient-to-r from-primary/5 to-purple-500/5 border border-primary/20">
             <h3 className="text-2xl font-bold text-foreground mb-4">Ready to work together?</h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              I'm always interested in hearing about new opportunities, innovative projects, 
+            I&apos;m always interested in hearing about new opportunities, innovative projects, 
               and ways to contribute to cutting-edge research in AI and ML.
             </p>
             <motion.a

@@ -9,8 +9,7 @@ import {
   Zap, 
   Cpu, 
   Network, 
-  Eye, 
-  MessageSquare, 
+  Eye,
   Sparkles, 
   Cloud, 
   Server, 
@@ -148,11 +147,11 @@ export default function AboutSection() {
               </p>
 
               <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
-                Outside work, I'm an avid <span className="text-blue-600 font-semibold">cyclist</span> (completed the 100km Chengdu Tianfu Greenway), <span className="text-blue-600 font-semibold">tennis player</span>, and <span className="text-blue-600 font-semibold">traveler</span> who has explored <span className="text-blue-600 font-semibold">9 countries</span> with ambitions to see the world.
+                Outside work, I&apos;m an avid <span className="text-blue-600 font-semibold">cyclist</span> (completed the 100km Chengdu Tianfu Greenway), <span className="text-blue-600 font-semibold">tennis player</span>, and <span className="text-blue-600 font-semibold">traveler</span> who has explored <span className="text-blue-600 font-semibold">9 countries</span> with ambitions to see the world.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
-                Looking ahead, I'm seeking <span className="text-blue-600 font-semibold">PhD opportunities</span> or <span className="text-blue-600 font-semibold">applied research roles</span> in industry to continue pushing the boundaries of AI and data science.
+                Looking ahead, I&apos;m seeking <span className="text-blue-600 font-semibold">PhD opportunities</span> or <span className="text-blue-600 font-semibold">applied research roles</span> in industry to continue pushing the boundaries of AI and data science.
               </p>
             </motion.div>
 

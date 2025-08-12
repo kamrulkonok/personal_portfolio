@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, Github, Linkedin, Mail, Brain, Network, Database, Zap, Cpu, Eye, Sparkles } from "lucide-react";
+import { Download, Github, Linkedin, Mail, Brain, Network, Database, Zap, Eye, Sparkles } from "lucide-react";
 
 export default function HeroSection() {
   const handleDownloadCV = () => {
@@ -105,7 +105,7 @@ export default function HeroSection() {
                     "Mathematics reveals timeless truths; code turns them into real‑world impact."
                   </span>
                   <span className="block mt-3 text-lg font-medium text-gray-600 dark:text-gray-400">
-                    — that's the journey I'm on 🚀
+                    — that's the journey I&apos;m on 🚀
                   </span>
                 </blockquote>
               </div>

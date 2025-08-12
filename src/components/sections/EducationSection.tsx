@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { GraduationCap, MapPin, Calendar, Award, BookOpen, Atom, Star, Presentation, FileText } from "lucide-react";
+import {MapPin, Calendar, Award, Star, FileText } from "lucide-react";
 
 const educationData = [
   {
