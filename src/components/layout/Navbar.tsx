@@ -40,8 +40,8 @@ export default function Navbar() {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/resume/CV_Kamrul.pdf";
-    link.download = "Kamrul_CV.pdf";
+    link.href = "/resume/KAMRUL_RESUME.pdf";
+    link.download = "KAMRUL_RESUME.pdf";
     link.click();
   };
 

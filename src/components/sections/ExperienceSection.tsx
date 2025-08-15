@@ -52,7 +52,7 @@ const experienceData = [
     icon: DatabaseIcon,
     achievements: [
       { icon: Database, text: "Data Engineering: Developed and optimized Apache Spark pipelines for large-scale data processing and analysis" },
-      { icon: ChartLine, text: "Performance Improvement: Enhanced data preprocessing workflows achieving 10% increase in predictive model accuracy" },
+      { icon: ChartLine, text: "Performance Improvement: Enhanced data preprocessing workflows achieving 20% increase in predictive model accuracy" },
       { icon: Briefcase, text: "Collaboration: Worked with cross-functional teams using Agile Scrum methodology for code quality and version control" },
       { icon: Code, text: "Technologies: Python, PySpark, SciKit-Learn, Agile Scrum, Jira, Git" }
     ]

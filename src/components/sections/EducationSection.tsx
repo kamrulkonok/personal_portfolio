@@ -47,7 +47,7 @@ const educationData = [
     logo: "/images/scu-logo.png",
     achievements: [
       { icon: Star, text: "Average Grade: 87/100" },
-      { icon: FileText, text: "Brain Tumor Detection and Classification using CNN" },
+      { icon: FileText, text: "Bachelor Thesis: Brain Tumor Detection and Classification using CNN" },
       { icon: Award, text: "Best Bachelor Thesis Award" },
     ],
   },

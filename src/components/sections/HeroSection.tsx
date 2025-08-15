@@ -6,8 +6,8 @@ import { Download, Github, Linkedin, Mail, Brain, Network, Database, Zap, Eye, S
 export default function HeroSection() {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/resume/CV_Kamrul.pdf";
-    link.download = "Kamrul_CV.pdf";
+    link.href = "/resume/KAMRUL_RESUME.pdf";
+    link.download = "KAMRUL_RESUME.pdf";
     link.click();
   };
 
@@ -76,7 +76,7 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
           <motion.div
-            className="text-center lg:text-left"
+            className="text-center lg:text-left pt-16 lg:pt-20"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
