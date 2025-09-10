@@ -61,7 +61,7 @@ export default function Navbar() {
           {/* Logo */}
           <motion.div
             className="flex items-center gap-2 cursor-pointer"
-            onClick={() => scrollToSection("hero")}
+            onClick={() => scrollToSection("about")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

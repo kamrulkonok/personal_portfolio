@@ -16,8 +16,8 @@ export default function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.05, // Further reduced from 0.1
-        staggerChildren: 0.05, // Further reduced from 0.1
+        delayChildren: 0.05, 
+        staggerChildren: 0.05, 
       },
     },
   };
@@ -62,110 +62,64 @@ export default function HeroSection() {
   };
 
   const researchInterests = [
-    { icon: Sparkles, text: "Large Language Models", color: "from-purple-500 to-pink-500" },
+    { icon: Sparkles, text: "Foundation Model", color: "from-purple-500 to-pink-500" },
     { icon: Brain, text: "Deep Learning", color: "from-blue-500 to-cyan-500" },
-    { icon: Zap, text: "Generative AI", color: "from-green-500 to-emerald-500" },
-    { icon: Database, text: "Big Data", color: "from-orange-500 to-red-500" },
-    { icon: Network, text: "Knowledge Graphs", color: "from-indigo-500 to-purple-500" },
-    { icon: Eye, text: "Computer Vision", color: "from-teal-500 to-blue-500" }
+    { icon: Database, text: "Big Data Analytics", color: "from-orange-500 to-red-500" }
   ];
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+    <section id="about" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
           <motion.div
-            className="text-center lg:text-left pt-16 lg:pt-20"
+            className="text-center lg:text-left pt-16 lg:pt-20 lg:col-span-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            {/* Main Tagline */}
-            <motion.div variants={itemVariants} className="mb-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
-                Transforming{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-                  Data
-                </span>{" "}
-                into{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                  Intelligence
-                </span>
-              </h1>
-            </motion.div>
-
-
-
-            {/* Inspirational Quote - Replaced the old line */}
+            {/* Bio Content */}
             <motion.div variants={itemVariants} className="mb-8">
-              <div className="bg-gradient-to-r from-blue-50/80 to-purple-50/80 dark:from-gray-800/60 dark:to-gray-700/60 p-6 rounded-2xl border border-blue-200/50 dark:border-gray-600/50 shadow-lg backdrop-blur-sm">
-                <blockquote className="text-xl sm:text-2xl text-gray-800 dark:text-gray-200 font-semibold leading-relaxed text-center">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                    "Mathematics reveals timeless truths; code turns them into real‑world impact."
-                  </span>
-                  <span className="block mt-3 text-lg font-medium text-gray-600 dark:text-gray-400">
-                    — that's the journey I&apos;m on 🚀
-                  </span>
-                </blockquote>
+              <div className="space-y-6">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
+                  Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Md Kamrul Islam</span> 👋
+                </h1>
+                
+                <div className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                  <p>
+                    I specialize in <span className="font-semibold text-blue-600">Big Data Management</span>, <span className="font-semibold text-purple-600">Deep Learning</span>, and <span className="font-semibold text-pink-600">Foundation Models</span>, with hands-on experience building scalable pipelines and intelligent systems in domains such as healthcare and cybersecurity.
+                  </p>
+                  
+                  <p>
+                    I'm currently pursuing the <span className="font-semibold text-blue-600">Erasmus Mundus Joint Master's in Big Data Management & Analytics (BDMA)</span> at Université Paris-Saclay, CentraleSupélec. Before this, I earned my Bachelor of Engineering in Software Engineering from Sichuan University, China. My academic journey has taken me across China, Belgium, Spain, and now France. I speak English and Chinese fluently, and a bit of French.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
-            {/* Key Highlights - Moved above Research Interests */}
-            <motion.div variants={itemVariants} className="mb-8">
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm text-gray-600 dark:text-gray-400">
-                <motion.div 
-                  className="flex items-center gap-2 bg-white dark:bg-gray-800 px-3 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-700"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                >
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  Erasmus Mundus Scholar
-                </motion.div>
-                <motion.div 
-                  className="flex items-center gap-2 bg-white dark:bg-gray-800 px-3 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-700"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                >
-                  <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
-                  Research Engineer
-                </motion.div>
-                <motion.div 
-                  className="flex items-center gap-2 bg-white dark:bg-gray-800 px-3 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-700"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                >
-                  <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-                  International Experience
-                </motion.div>
-              </div>
-            </motion.div>
 
-            {/* Research Interests Grid */}
+            {/* Research Interests and Hobbies */}
             <motion.div variants={itemVariants} className="mb-8">
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4 flex items-center gap-2 justify-center lg:justify-start">
-                <Sparkles className="h-5 w-5 text-yellow-500" />
-                Research Interests
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {researchInterests.map((interest, index) => {
-                  const Icon = interest.icon;
-                  return (
-                    <motion.div
-                      key={interest.text}
-                      className="bg-white dark:bg-gray-800 px-3 py-2 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 flex items-center gap-2 text-sm"
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                      whileHover={{ 
-                        scale: 1.02,
-                        y: -1,
-                        boxShadow: "0 4px 12px rgba(0,0,0,0.08)"
-                      }}
-                    >
-                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${interest.color}`}></div>
-                      <Icon className="h-4 w-4 text-gray-600 dark:text-gray-400" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">{interest.text}</span>
-                    </motion.div>
-                  );
-                })}
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center gap-2">
+                    <Sparkles className="h-5 w-5 text-yellow-500" />
+                    Research Interests
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Foundation Models, Deep Learning, Medical Imaging, Big Data Analytics
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center gap-2">
+                    <Zap className="h-5 w-5 text-green-500" />
+                    Hobbies
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Tennis, Cycling, Traveling, Hiking
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -228,90 +182,27 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Enhanced Profile Image */}
+          {/* Right Column - Static Profile Image */}
           <motion.div
-            className="flex justify-center lg:justify-end relative"
+            className="flex justify-center lg:justify-end relative lg:col-span-4"
             variants={itemVariants}
             initial="hidden"
             animate="visible"
           >
-            {/* Animated Background Elements */}
-            <motion.div
-              className="absolute inset-0 w-96 h-96 bg-gradient-to-br from-blue-400/20 via-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 180, 360],
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
+            {/* Static Background Elements */}
+            <div className="absolute inset-0 w-96 h-96 bg-gradient-to-br from-blue-400/20 via-purple-400/20 to-pink-400/20 rounded-lg blur-3xl" />
             
             {/* Profile Image Container */}
-            <motion.div
-              className="relative z-10"
-              variants={profileVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              {/* Profile Image */}
-              <motion.div
-                className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl"
-                whileHover={{ scale: 1.05 }}
-                animate="float"
-                variants={floatingVariants}
-              >
+            <div className="relative z-10">
+              {/* Profile Image - Square */}
+              <div className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-lg overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl hover:border-blue-300 dark:hover:border-blue-600">
                 <img
                   src="/images/profile_picture.png"
                   alt="Kamrul Islam - AI Researcher & Data Scientist"
-                  className="w-full h-full object-contain" // Changed from object-cover to object-contain
-                  style={{
-                    transform: "translateZ(0)",
-                    backfaceVisibility: "hidden"
-                  }}
+                  className="w-full h-full object-cover object-bottom transition-transform duration-300 hover:scale-110"
                 />
-                
-                {/* Glowing Border Effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-              </motion.div>
-              
-              {/* Enhanced Floating Elements - Simplified */}
-              <motion.div
-                className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-xl"
-                animate={{
-                  y: [0, -8, 0], // Simplified animation
-                  scale: [1, 1.05, 1]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <Brain className="h-8 w-8" />
-              </motion.div>
-              
-              <motion.div
-                className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-xl"
-                animate={{
-                  y: [0, 8, 0], // Simplified animation
-                  scale: [1, 1.05, 1]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 2
-                }}
-              >
-                <Network className="h-8 w-8" />
-              </motion.div>
-              
-              {/* Removed AI/ML text badges - keeping only the icon elements */}
-            </motion.div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
