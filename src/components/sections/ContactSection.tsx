@@ -331,31 +331,6 @@ export default function ContactSection() {
           </motion.div>
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className="card-modern p-8 bg-gradient-to-r from-primary/5 to-purple-500/5 border border-primary/20">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Ready to work together?</h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            I&apos;m always interested in hearing about new opportunities, innovative projects, 
-              and ways to contribute to cutting-edge research in AI and ML.
-            </p>
-            <motion.a
-              href="mailto:mdkamrul.islam@student-cs.fr"
-              className="btn-primary inline-flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail className="h-5 w-5" />
-              Let's Talk
-            </motion.a>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
