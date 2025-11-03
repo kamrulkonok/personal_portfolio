@@ -156,7 +156,7 @@ export default function HeroSection() {
                 className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-xl border-2 border-blue-200 dark:border-purple-500"
               >
                 <p className="text-center text-gray-700 dark:text-gray-300 mb-4 text-sm">
-                  📎 Looking for my detailed research portfolio with publications and projects?
+                  📎 Looking for my detailed research portfolio with projects?
                 </p>
                 <motion.a
                   href="https://kamrulkonok.github.io"
