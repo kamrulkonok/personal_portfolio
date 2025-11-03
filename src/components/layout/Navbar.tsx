@@ -2,17 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon, Download } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, setTheme } = useTheme(); // Use setTheme instead of toggleTheme
-  const [mounted, setMounted] = useState(false); // Add this state
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true); // Set mounted to true after component mounts
+    setMounted(true);
   }, []);
 
   useEffect(() => {
@@ -22,28 +22,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80; // Account for fixed navbar height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-      setIsOpen(false); // Close mobile menu after clicking
-    }
-  };
-
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = "/resume/KAMRUL_RESUME.pdf";
-    link.download = "KAMRUL_RESUME.pdf";
-    link.click();
-  };
 
   return (
     <motion.nav
@@ -61,7 +39,7 @@ export default function Navbar() {
           {/* Logo */}
           <motion.div
             className="flex items-center gap-2 cursor-pointer"
-            onClick={() => scrollToSection("about")}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -76,70 +54,19 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             <motion.button
-              onClick={() => scrollToSection("about")}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="nav-link text-foreground hover:text-primary transition-colors duration-300 font-bold"
               whileHover={{ y: -2 }}
             >
               About
             </motion.button>
-            <span className="text-primary text-lg font-bold">•</span>
-            <motion.button
-              onClick={() => scrollToSection("education")}
-              className="nav-link text-foreground hover:text-primary transition-colors duration-300 font-bold"
-              whileHover={{ y: -2 }}
-            >
-              Education
-            </motion.button>
-            <span className="text-primary text-lg font-bold">•</span>
-            <motion.button
-              onClick={() => scrollToSection("experience")}
-              className="nav-link text-foreground hover:text-primary transition-colors duration-300 font-bold"
-              whileHover={{ y: -2 }}
-            >
-              Experience
-            </motion.button>
-            <span className="text-primary text-lg font-bold">•</span>
-            <motion.button
-              onClick={() => scrollToSection("publications")}
-              className="nav-link text-foreground hover:text-primary transition-colors duration-300 font-bold"
-              whileHover={{ y: -2 }}
-            >
-              Publications
-            </motion.button>
-            <span className="text-primary text-lg font-bold">•</span>
-            <motion.button
-              onClick={() => scrollToSection("projects")}
-              className="nav-link text-foreground hover:text-primary transition-colors duration-300 font-bold"
-              whileHover={{ y: -2 }}
-            >
-              Projects
-            </motion.button>
-            <span className="text-primary text-lg font-bold">•</span>
-            <motion.button
-              onClick={() => scrollToSection("contact")}
-              className="nav-link text-foreground hover:text-primary transition-colors duration-300 font-bold"
-              whileHover={{ y: -2 }}
-            >
-              Contact
-            </motion.button>
           </div>
 
           {/* Right Side Actions */}
           <div className="flex items-center gap-4">
-            {/* Download CV Button */}
-            <motion.button
-              onClick={handleDownloadCV}
-              className="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Download className="h-4 w-4" />
-              CV
-            </motion.button>
-
             {/* Theme Toggle */}
             <motion.button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")} // Toggle between themes
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -172,57 +99,14 @@ export default function Navbar() {
           >
             <div className="container mx-auto px-4 py-6 space-y-4">
               <motion.button
-                onClick={() => scrollToSection("about")}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  setIsOpen(false);
+                }}
                 className="block w-full text-left py-3 px-4 text-foreground hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300"
                 whileHover={{ x: 8 }}
               >
                 About
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("education")}
-                className="block w-full text-left py-3 px-4 text-foreground hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300"
-                whileHover={{ x: 8 }}
-              >
-                Education
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("experience")}
-                className="block w-full text-left py-3 px-4 text-foreground hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300"
-                whileHover={{ x: 8 }}
-              >
-                Experience
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("publications")}
-                className="block w-full text-left py-3 px-4 text-foreground hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300"
-                whileHover={{ x: 8 }}
-              >
-                Publications
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("projects")}
-                className="block w-full text-left py-3 px-4 text-foreground hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300"
-                whileHover={{ x: 8 }}
-              >
-                Projects
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("contact")}
-                className="block w-full text-left py-3 px-4 text-foreground hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300"
-                whileHover={{ x: 8 }}
-              >
-                Contact
-              </motion.button>
-              
-              {/* Mobile Download CV Button */}
-              <motion.button
-                onClick={handleDownloadCV}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors duration-300"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Download className="h-4 w-4" />
-                Download CV
               </motion.button>
             </div>
           </motion.div>

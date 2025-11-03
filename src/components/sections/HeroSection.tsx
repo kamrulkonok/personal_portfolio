@@ -1,15 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, Github, Linkedin, Mail, Brain, Network, Database, Zap, Eye, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, Brain, Network, Database, Zap, Eye, Sparkles } from "lucide-react";
 
 export default function HeroSection() {
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = "/resume/KAMRUL_RESUME.pdf";
-    link.download = "KAMRUL_RESUME.pdf";
-    link.click();
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -123,30 +117,6 @@ export default function HeroSection() {
               </div>
             </motion.div>
 
-            {/* Call to Action Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <motion.button
-                onClick={handleDownloadCV}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 group"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Download className="h-5 w-5 group-hover:animate-bounce" />
-                Download CV
-                <span className="text-sm opacity-80">(PDF)</span>
-              </motion.button>
-              
-              <motion.button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3 group"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Mail className="h-5 w-5" />
-                Let's Connect
-              </motion.button>
-            </motion.div>
-
             {/* Social Links */}
             <motion.div variants={itemVariants} className="mt-8">
               <div className="flex justify-center lg:justify-start gap-4">
@@ -179,6 +149,26 @@ export default function HeroSection() {
                   <Mail className="h-6 w-6" />
                 </motion.a>
               </div>
+              
+              {/* Link to old portfolio */}
+              <motion.div 
+                variants={itemVariants}
+                className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-xl border-2 border-blue-200 dark:border-purple-500"
+              >
+                <p className="text-center text-gray-700 dark:text-gray-300 mb-4 text-sm">
+                  📎 Looking for my detailed research portfolio with publications and projects?
+                </p>
+                <motion.a
+                  href="https://kamrulkonok.github.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Visit My Research Portfolio →
+                </motion.a>
+              </motion.div>
             </motion.div>
           </motion.div>
 
